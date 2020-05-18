@@ -1,5 +1,6 @@
 struct stat;
 struct rtcdate;
+struct proc_stat;
 
 // system calls
 int fork(void);
@@ -23,7 +24,10 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
-
+int cps(void);
+int chpr(int pid, int priority );
+int waitx(int *wtime,int *rtime);
+int gpinfo(struct proc_stat* ps,int pid);
 // ulib.c
 int stat(const char*, struct stat*);
 char* strcpy(char*, const char*);
